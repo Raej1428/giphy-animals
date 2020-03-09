@@ -8,14 +8,16 @@ button {
     background-color: lavender;
     margin: 10px 3px;
     padding: 3px 10px;
+    font-family: 'Sen', sans-serif;
 }
 
 #animalBtn {
     border-color: hotpink;
     border-width: 5px;
     background-color: lavender;
-    margin: 5px;
-    padding: 5px;
+    margin: 1px;
+    padding: 3px;
+    font-family: 'Sen', sans-serif;
 }
 
 .jumbotron {
@@ -35,4 +37,9 @@ img {
 
 p {
     margin: 10px;
+    font-family: 'Sen', sans-serif;
+}
+
+#animalItem {
+    font-family: 'Sen', sans-serif;
 }

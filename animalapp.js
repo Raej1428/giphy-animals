@@ -1,6 +1,4 @@
 window.onload = function () {
-    $("#animalBtn").on("click", search);
-
     $("button").on("click", function () {
         $("#gifs-appear-here").empty();
         // Grabbing and storing the data-animal property value from the button
@@ -41,13 +39,13 @@ window.onload = function () {
     });
 
     function search() {
-        // event.preventDefault();
-        
-        animalInput = $("#searchTerm").val().trim();
+        event.preventDefault();
+
+        animalInput = $("input:text").val();
         console.log(animalInput)
 
         queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-        animalInput + "&api_key=o2BMu32QNHXQZs2A5dgV6kntwDSDTrXU&limit=10";
+            animalInput + "&api_key=o2BMu32QNHXQZs2A5dgV6kntwDSDTrXU&limit=10";
         console.log(queryURL)
 
         $.ajax({
@@ -74,5 +72,5 @@ window.onload = function () {
             }
         })
     }
-
+    $("#animalBtn").on("click", search);
 }
