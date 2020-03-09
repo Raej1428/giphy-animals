@@ -1,11 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="animalapp.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>Document</title>
 </head>
+
 <body>
-    
+    <div class="containter-fluid">
+        <div class="row">
+            <div class="col-md-8">
+
+                <button data-animal="kangaroo"> Kangaroo </button>
+                <button data-animal="zebra"> Zebra </button>
+                <button data-animal="hippo"> Hippo </button>
+                <button data-animal="sea urchin"> Sea Urchin </button>
+                <button data-animal="kitten"> Kitten</button>
+                <button data-animal="racoon"> Racoon </button>
+                <button data-animal="chinchilla"> Chinchilla </button>
+                <button data-animal="monkey"> Monkey </button>
+                <button data-animal="lion"> Lion </button>
+                <button data-animal="flamingo"> Flamingo </button>
+                <button data-animal="koala"> Koala </button>
+            </div>
+            <div class="col-md-4">
+                <!-- <form> -->
+                    <form>
+                        <span id="aniamlItem">Add an Animal: <input id="searchTerm" type="text" ><input id="AnimalBtn" value="Add Item" type="submit"></span>
+                      </form>
+                    <!-- <span for="searchTerm">Add a Animal!
+                    <input type="text" id="searchTerm">
+                    <br> -->
+                    <!-- Button triggers new animal to be added -->
+                    <!-- <input id="animalBtn" type="submit" value="Add an Animal!">
+                </form> -->
+            </div>
+           
+          
+
+        </div>
+        <div class="row">
+            <div class="col-xl-12">
+                <!-- animals will Get Dumped Here -->
+                <!-- <div id="buttonsView"></div> -->
+
+                <div id="animal-view"></div>
+
+                <div id="gifs-appear-here"> </div>
+            </div>
+        </div>
+
 </body>
+
 </html>
