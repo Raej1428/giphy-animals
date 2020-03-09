@@ -1,0 +1,38 @@
+body {
+    background-color: lavenderblush;
+}
+
+button {
+    border-color: hotpink;
+    border-width: 5px;
+    background-color: lavender;
+    margin: 10px 3px;
+    padding: 3px 10px;
+}
+
+#animalBtn {
+    border-color: hotpink;
+    border-width: 5px;
+    background-color: lavender;
+    margin: 5px;
+    padding: 5px;
+}
+
+.jumbotron {
+    color: floralwhite;
+    background-color: rgb(117, 106, 185);
+    font-size: 103px;
+    text-align: center;
+    font-family: 'Bellota', cursive;
+}
+
+img {
+    border-color: forestgreen;
+    border-width: 7px;
+    border-style: solid;
+    margin: 10px;
+}
+
+p {
+    margin: 10px;
+}

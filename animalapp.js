@@ -1,12 +1,13 @@
 window.onload = function () {
+    $("#animalBtn").on("click", search);
 
     $("button").on("click", function () {
         $("#gifs-appear-here").empty();
         // Grabbing and storing the data-animal property value from the button
-        var animal = $(this).attr("data-animal");
+        animal = $(this).attr("data-animal");
 
         // Constructing a queryURL using the animal name
-        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
+        queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
             animal + "&api_key=o2BMu32QNHXQZs2A5dgV6kntwDSDTrXU&limit=10";
 
         // Performing an AJAX request with the queryURL
@@ -23,11 +24,11 @@ window.onload = function () {
                 // Looping through each result item
                 for (var i = 0; i < results.length; i++) {
                     // Creating and storing a div tag
-                    var animalDiv = $("<div>");
+                    animalDiv = $("<div>");
                     // Creating a paragraph tag with the result item's rating
-                    var p = $("<p>").text("Rating: " + results[i].rating);
+                    p = $("<p>").text("Rating: " + results[i].rating);
                     // Creating and storing an image tag
-                    var animalImage = $("<img>");
+                    animalImage = $("<img>");
                     // Setting the src attribute of the image to a property pulled off the result item
                     animalImage.attr("src", results[i].images.fixed_height.url);
                     // Appending the paragraph and image tag to the animalDiv
@@ -39,30 +40,30 @@ window.onload = function () {
             });
     });
 
-
-    $("#animalBtn").on("click", function () {
-        event.preventDefault();
+    function search() {
+        // event.preventDefault();
         
-        var animalInput = $("#searchTerm").val().trim();
+        animalInput = $("#searchTerm").val().trim();
         console.log(animalInput)
 
-        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + animalInput + "&api_key=o2BMu32QNHXQZs2A5dgV6kntwDSDTrXU&limit=10";
+        queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
+        animalInput + "&api_key=o2BMu32QNHXQZs2A5dgV6kntwDSDTrXU&limit=10";
         console.log(queryURL)
 
         $.ajax({
             url: queryURL,
             method: "GET"
         }).then(function (response) {
-            var results = response.data;
+            results = response.data;
             console.log(results)
             // Looping through each result item
             for (var i = 0; i < results.length; i++) {
                 // Creating and storing a div tag
-                var animalDiv = $("<div>");
+                animalDiv = $("<div>");
                 // Creating a paragraph tag with the result item's rating
-                var p = $("<p>").text("Rating: " + results[i].rating);
+                p = $("<p>").text("Rating: " + results[i].rating);
                 // Creating and storing an image tag
-                var animalImage = $("<img>");
+                animalImage = $("<img>");
                 // Setting the src attribute of the image to a property pulled off the result item
                 animalImage.attr("src", results[i].images.fixed_height.url);
                 // Appending the paragraph and image tag to the animalDiv
@@ -70,7 +71,8 @@ window.onload = function () {
                 animalDiv.append(animalImage);
                 // Prependng the animalDiv to the HTML page in the "#gifs-appear-here" div
                 $("#gifs-appear-here").prepend(animalDiv);
-            };
-        });
-    });
+            }
+        })
+    }
+
 }
